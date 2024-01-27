@@ -1,0 +1,25 @@
+<!-- code here -->
+<!-- code here -->
+<%- include("header") -%>
+    <div class="box" id="heading">
+      <h1><%= listTitle %></h1>
+    </div>
+
+    <div class="box">
+        <% if (newListItems.length===0) { %>
+            <div class="item">
+                <p>No new job available</p>
+            </div>
+        <% } %> 
+        <% newListItems.map(function(item) { %>
+            <div class="item">
+                <input type="checkbox" />
+                <p><%= item %></p>
+            </div>
+        <% }) %>
+        <form action="/" method="post" class="item" id="myForm">
+          <input type="text" id="newItem" name="newItem" placeholder="Add new Item"/ autocomplete="off">
+          <button type="submit" name="list" value= <%= listTitle %> >+</button>
+        </form>
+    </div>
+    <%- include("footer") -%>
