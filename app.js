@@ -15,7 +15,6 @@ const workItems = [];
 
 
 app.get("/", (req, res) => {
-  
   res.render("list", { listTitle: date(), newListItems: items });
 });
 
